@@ -1,0 +1,25 @@
+name: mobile-security
+version: 2.0.0
+status: active
+agent: .claude/agents/mobile-security.md
+
+description: Mobile security — Android/iOS analysis, APK reversing, dynamic instrumentation, mobile pentest
+
+roles:
+  specialists:
+    - {id: android-analyst, file: roles/android-analyst.md, phase: analysis}
+    - {id: ios-analyst, file: roles/ios-analyst.md, phase: analysis}
+    - {id: mobile-pentester, file: roles/mobile-pentester.md, phase: exploitation}
+
+skills:
+  android: [skills/mobile/apktool, skills/mobile/jadx, skills/mobile/adb]
+  dynamic: [skills/mobile/frida, skills/mobile/objection]
+  network: [skills/web/ffuf]
+
+workflows:
+  - {id: android-analysis, file: workflows/android-analysis.md}
+
+routing_priority:
+  - "APK / Android / ADB / Dalvik → android-analyst"
+  - "IPA / iOS / Swift / Objective-C → ios-analyst"
+  - "mobile pentest / intercept / bypass SSL → mobile-pentester"

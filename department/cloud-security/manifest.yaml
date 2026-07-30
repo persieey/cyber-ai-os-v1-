@@ -1,0 +1,24 @@
+name: cloud-security
+version: 2.0.0
+status: active
+agent: .claude/agents/cloud-security.md
+
+description: Cloud security — AWS/Azure/GCP audit, misconfiguration, cloud pentesting
+
+roles:
+  specialists:
+    - {id: aws-auditor, file: roles/aws-auditor.md, phase: audit}
+    - {id: azure-auditor, file: roles/azure-auditor.md, phase: audit}
+    - {id: cloud-pentester, file: roles/cloud-pentester.md, phase: exploitation}
+
+skills:
+  aws: [skills/cloud/aws-cli, skills/cloud/pacu]
+  multi: [skills/cloud/scout-suite, skills/cloud/trivy]
+
+workflows:
+  - {id: cloud-audit, file: workflows/cloud-audit.md}
+
+routing_priority:
+  - "AWS / S3 / IAM / CloudTrail / EC2 → aws-auditor"
+  - "Azure / Entra / Azure AD / AKS → azure-auditor"
+  - "cloud pentest / privilege escalation / lateral movement → cloud-pentester"

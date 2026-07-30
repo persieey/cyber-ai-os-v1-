@@ -4,8 +4,11 @@
 
 | Task | Department Agent |
 |------|-----------------|
-| CTF / Lab / Pentest / Exploit / PrivEsc / Rev | `offensive-security` |
+| CTF / Lab / Pentest / Exploit / PrivEsc / Rev / PWN | `offensive-security` |
 | SOC / Alert / Log / Incident / IR / Threat Hunt / Hardening | `defensive-security` |
+| Malware / Sample / Static Analysis / Sandbox / IOC / YARA | `malware-analysis` |
+| AWS / Azure / GCP / Cloud / S3 / IAM / CloudTrail | `cloud-security` |
+| Android / iOS / APK / IPA / Frida / Mobile | `mobile-security` |
 | Learning / Concept / สอน / อธิบาย | `learning` |
 | Report / Writeup / Documentation | `reporting` |
 | Unknown | ถาม 1 คำถาม |

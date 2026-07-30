@@ -20,6 +20,21 @@ Keywords: error, ไม่ work, พัง, ทำไม, แก้ไข
 → Mode: Walkthrough
 → Route: learning หรือ offensive-security ตาม context
 
+## Malware Analysis
+Keywords: malware, sample, exe, strings, PE, sandbox, IOC, YARA, Sigma, static, dynamic, reverse malware
+→ Mode: Walkthrough
+→ Route: malware-analysis
+
+## Cloud Security
+Keywords: AWS, Azure, GCP, S3, IAM, CloudTrail, cloud, EC2, blob, bucket, terraform
+→ Mode: Walkthrough
+→ Route: cloud-security
+
+## Mobile Security
+Keywords: APK, Android, iOS, IPA, Frida, Objection, ADB, mobile, apktool, jadx
+→ Mode: Walkthrough
+→ Route: mobile-security
+
 ## Blue Team / Defensive
 Keywords: SOC, SIEM, alert, log, incident, IR, threat hunt, IOC, hardening, blue team
 → Mode: Walkthrough
