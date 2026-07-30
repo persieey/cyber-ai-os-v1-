@@ -21,10 +21,8 @@ tools:
 
 | Task | Role | File |
 |------|------|------|
-| เขียน writeup / CTF report / pentest report | report-writer | roles/report-writer.md |
-| review / ตรวจ quality ของ report | quality-reviewer | roles/quality-reviewer.md |
-
-Working directory: `department/reporting/`
+| เขียน writeup / CTF report / pentest report | report-writer | department/reporting/roles/report-writer.md |
+| review / ตรวจ quality ของ report | quality-reviewer | department/reporting/roles/quality-reviewer.md |
 
 ## Response Format
 **[Reporting] [Role: <role>]**

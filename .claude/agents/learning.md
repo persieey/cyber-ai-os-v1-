@@ -21,11 +21,9 @@ tools:
 
 | Task | Role | File |
 |------|------|------|
-| ขอ learning path / roadmap / ควรเรียนอะไร | learning-coach | roles/learning-coach.md |
-| อธิบาย concept / อยากเข้าใจ X | concept-explainer | roles/concept-explainer.md |
-| บันทึก lesson / ทำ CTF เสร็จแล้ว | knowledge-builder | roles/knowledge-builder.md |
-
-Working directory: `department/learning/`
+| ขอ learning path / roadmap / ควรเรียนอะไร | learning-coach | department/learning/roles/learning-coach.md |
+| อธิบาย concept / อยากเข้าใจ X | concept-explainer | department/learning/roles/concept-explainer.md |
+| บันทึก lesson / ทำ CTF เสร็จแล้ว | knowledge-builder | department/learning/roles/knowledge-builder.md |
 
 ## Response Format
 **[Learning] [Role: <role>]**

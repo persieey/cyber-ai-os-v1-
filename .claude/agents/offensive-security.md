@@ -19,14 +19,14 @@ tools: Read, Write, Edit, Bash, Glob, Grep
 ```
 task เกี่ยวกับ...          → โหลด role file นี้
 ───────────────────────────────────────────────────────
-port scan, recon           → roles/recon-analyst.md
-dir enum, SMB, FTP         → roles/enumeration-analyst.md
-SQLi, XSS, LFI, web vuln   → roles/web-pentest-specialist.md
-exploit, searchsploit, hash → roles/exploit-analyst.md
-linux shell → root         → roles/linux-privesc-specialist.md
-windows, AD, kerberos      → roles/windows-ad-specialist.md
-binary, ghidra, gdb, pwn   → roles/rev-engineer.md
-write report, writeup      → roles/report-writer.md
+port scan, recon           → department/offensive-security/roles/recon-analyst.md
+dir enum, SMB, FTP         → department/offensive-security/roles/enumeration-analyst.md
+SQLi, XSS, LFI, web vuln   → department/offensive-security/roles/web-pentest-specialist.md
+exploit, searchsploit, hash → department/offensive-security/roles/exploit-analyst.md
+linux shell → root         → department/offensive-security/roles/linux-privesc-specialist.md
+windows, AD, kerberos      → department/offensive-security/roles/windows-ad-specialist.md
+binary, ghidra, gdb, pwn   → department/offensive-security/roles/rev-engineer.md
+write report, writeup      → department/offensive-security/roles/report-writer.md
 ```
 
 ## การโหลด Role
