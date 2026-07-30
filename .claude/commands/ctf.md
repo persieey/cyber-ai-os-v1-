@@ -54,8 +54,8 @@ Categories: web | crypto | forensics | rev | pwn | osint | misc
 ## If action is "report"
 
 1. Read session.md for all findings
-2. Read templates/lab-report.md
-3. Fill template with CTF-specific format
+2. Read templates/ctf-writeup.md
+3. Fill template with data from session.md
 4. Output completed report
 5. Ask: "บันทึก writeup ใน knowledge/writeups/<name>.md ไหม?"
 6. Ask: "มี pattern ใหม่ที่ต้องเพิ่มใน /kb ไหม?"

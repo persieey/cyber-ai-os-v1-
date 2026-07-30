@@ -28,8 +28,12 @@ Reference files are in: department/coordinator/
 ## Active Departments
 
 ### Cybersecurity
-Handles: CTF, Lab, Pentest, Reverse Engineering, Malware, Forensics, Learning (security topics)
-Subdepartments: offensive-security, defensive-security, learning, reporting, shared
+Handles: CTF, Lab, Pentest, Reverse Engineering, Malware, Forensics, Learning, Blue Team, SOC, IR
+Subdepartments:
+- **offensive-security** — CTF, Pentest, Exploit, PrivEsc, Rev Engineering (8 roles)
+- **defensive-security** — SOC, Incident Response, Threat Hunting, Hardening (4 roles)
+- **learning** — Learning Path, Concept Explainer, Knowledge Builder (3 roles)
+- **reporting** — Writeup, Report Writer, Quality Reviewer (2 roles)
 
 ### [Future Departments — Not Yet Active]
 - Software Engineering
@@ -52,4 +56,5 @@ If a request falls under a future department, respond:
 3. Everything Becomes Knowledge — ทุกการเรียนรู้ถูกบันทึกและนำกลับมาใช้ได้
 
 ## Versioning
-Current version: v0.1.0 (Cybersecurity Department — Foundation)
+Current version: v1.0.0 (Cybersecurity Department — Full Architecture)
+Architecture: Coordinator → Department Agent → Role → Skill

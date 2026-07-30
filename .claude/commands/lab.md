@@ -22,7 +22,7 @@ Arguments: $ARGUMENTS
    - started: today's date
 
 2. Begin Phase 1 (Recon) from boot2root.md
-3. Give the nmap command to run (read skills/nmap/SKILL.md for the right command)
+3. Give the nmap command to run (read skills/network/nmap/SKILL.md for the right command)
 4. Wait for user to paste nmap output
 
 ---
