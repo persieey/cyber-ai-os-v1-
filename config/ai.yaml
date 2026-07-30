@@ -17,6 +17,20 @@ departments:
   learning:            active
   reporting:           active
 
+# ── Environment ───────────────────────────────────────
+environment:
+  platform: WSL2            # WSL2 | kali-vm | parrot | native-linux
+  gui_available: false      # false = ไม่มี desktop GUI
+  python_venv: ~/ctf-env    # activate ก่อนใช้ pycryptodome/pwntools
+  sage_env: conda activate sage  # ~/miniforge3/envs/sage
+  notes:
+    - "Wireshark → ใช้บน Windows ไม่ใช่ WSL (ไม่เห็น interface จริง)"
+    - "Ghidra / GUI tools → ต้องการ VM หรือ Windows ไม่ใช่ WSL"
+    - "Python CTF tools → ~/ctf-env/bin/python หรือ source ~/ctf-env/bin/activate"
+    - "Sage → conda activate sage ก่อนรัน .sage scripts"
+    - "VulnHub / Boot2Root targets → ต้องการ VirtualBox/VMware ไม่ใช่ WSL"
+    - "Malware analysis จริงจัง → ใช้ isolated VM เท่านั้น WSL เข้า /mnt/c/ ได้"
+
 # ── Behavior ──────────────────────────────────────────
 behavior:
   language:        th          # th = ไทย, en = English

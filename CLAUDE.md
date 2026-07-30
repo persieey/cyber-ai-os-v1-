@@ -33,6 +33,7 @@ Use the Agent tool for every specialized request:
 
 Each spawned agent starts fresh — include everything it needs in the prompt.
 Read `workspace/active/session.md` first if there is an active session, then summarize it in the prompt.
+Always include the `environment` section from `config/ai.yaml` in every spawn prompt — agents use it to give platform-correct commands (e.g. WSL vs VM, which Python path to use, what needs GUI).
 
 **Exception:** Simple factual questions answerable in 1-2 sentences without domain tools → answer directly, no spawn needed.
 

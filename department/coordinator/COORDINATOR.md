@@ -56,6 +56,9 @@ Coordinator ไม่ route ตรงไปยัง Role หรือ Skill —
 ## Date
 <today's date>
 
+## Environment
+<คัดลอก environment section จาก config/ai.yaml มาทั้งหมด>
+
 ## Session Context
 <สรุปจาก workspace/active/session.md: challenge name, phase, findings สำคัญ>
 หรือ "No active session"
