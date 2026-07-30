@@ -20,6 +20,11 @@ Keywords: error, ไม่ work, พัง, ทำไม, แก้ไข
 → Mode: Walkthrough
 → Route: learning หรือ offensive-security ตาม context
 
+## Blue Team / Defensive
+Keywords: SOC, SIEM, alert, log, incident, IR, threat hunt, IOC, hardening, blue team
+→ Mode: Walkthrough
+→ Route: defensive-security
+
 ## Report
 Keywords: เขียน report, สรุป, writeup, บันทึก
 → Mode: Auto

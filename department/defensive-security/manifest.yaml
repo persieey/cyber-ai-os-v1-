@@ -1,0 +1,28 @@
+name: defensive-security
+version: 2.0.0
+status: active
+agent: .claude/agents/defensive-security.md
+
+description: Blue team operations — SOC, Incident Response, Threat Hunting, Hardening
+
+roles:
+  specialists:
+    - {id: soc-analyst, file: roles/soc-analyst.md, phase: detection}
+    - {id: incident-responder, file: roles/incident-responder.md, phase: response}
+    - {id: threat-hunter, file: roles/threat-hunter.md, phase: hunting}
+    - {id: hardening-specialist, file: roles/hardening-specialist.md, phase: prevention}
+
+skills:
+  siem: [skills/defensive/splunk, skills/defensive/elastic]
+  network: [skills/defensive/wireshark, skills/defensive/zeek]
+  forensics: [skills/defensive/volatility, skills/defensive/yara]
+
+workflows:
+  - {id: incident-response, file: workflows/incident-response.md}
+  - {id: threat-hunting, file: workflows/threat-hunting.md}
+
+routing_priority:
+  - "log analysis / SIEM / alert triage → soc-analyst"
+  - "incident / breach / containment → incident-responder"
+  - "IOC / threat hunting / malware indicator → threat-hunter"
+  - "hardening / config review / patching → hardening-specialist"

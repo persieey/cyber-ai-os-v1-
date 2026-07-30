@@ -5,6 +5,7 @@
 | Task | Department Agent |
 |------|-----------------|
 | CTF / Lab / Pentest / Exploit / PrivEsc / Rev | `offensive-security` |
+| SOC / Alert / Log / Incident / IR / Threat Hunt / Hardening | `defensive-security` |
 | Learning / Concept / สอน / อธิบาย | `learning` |
 | Report / Writeup / Documentation | `reporting` |
 | Unknown | ถาม 1 คำถาม |

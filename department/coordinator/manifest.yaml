@@ -20,8 +20,9 @@ departments:
     status: active        # v2 Department Agent
 
   - id: defensive-security
+    agent: .claude/agents/defensive-security.md
     manifest: department/defensive-security/manifest.yaml
-    status: planned       # not yet built
+    status: active        # v2 Department Agent
 
 # ── Legacy Agents (Sprint 11 flat agents) ─────────────
 # status: legacy — ยังใช้งานได้ แต่จะถูกลบเมื่อ migration ครบ
