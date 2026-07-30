@@ -1,0 +1,20 @@
+name: john
+
+version: 0.1.0
+
+status: active
+
+category: exploitation
+
+used_by:
+  - offensive-security
+
+phase: exploitation
+
+skill_file: skills/john/SKILL.md
+
+tags:
+  - password-cracking
+  - hash-cracking
+  - exploitation
+  - crypto

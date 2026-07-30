@@ -1,0 +1,29 @@
+name: offensive-security
+
+version: 0.1.0
+
+status: active
+
+owner: Cyber AI OS
+
+description: Penetration testing, CTF, และ lab support โดยเน้นสอนให้เข้าใจ
+
+depends_on:
+  - coordinator
+
+prompt: department/offensive-security/PROMPT.md
+
+active_capabilities:
+  - recon
+  - enumeration
+  - web-pentest
+  - ctf-support
+
+routes_from:
+  - coordinator
+
+default_mode: hint
+
+cannot_handle:
+  - unauthorized-real-world-attacks
+  - out-of-scope-testing

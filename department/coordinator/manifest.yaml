@@ -1,0 +1,16 @@
+name: coordinator
+
+version: 0.1.0
+
+status: development
+
+owner: Cyber AI OS
+
+depends_on: []
+
+departments:
+  - offensive-security
+  - defensive-security
+  - reporting
+  - learning
+  - shared

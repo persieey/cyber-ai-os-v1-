@@ -1,0 +1,29 @@
+name: learning
+
+version: 0.1.0
+
+status: active
+
+owner: Cyber AI OS
+
+description: สอน concept ด้าน Cybersecurity และ Computer Science ให้เข้าใจจริง
+
+depends_on:
+  - coordinator
+
+prompt: department/learning/PROMPT.md
+
+active_topics:
+  - networking
+  - linux
+  - web-security
+  - cryptography
+  - python
+  - ctf-methodology
+
+routes_from:
+  - coordinator
+
+cannot_handle:
+  - ctf-solutions
+  - lab-execution
