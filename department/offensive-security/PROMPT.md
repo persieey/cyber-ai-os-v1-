@@ -45,7 +45,7 @@ Next decision
 ## Recon Analyst Toolkit (Phase 1 focus)
 
 ```
-nmap          — port scan, service version, OS detection  [skill: skills/nmap/SKILL.md]
+nmap          — port scan, service version, OS detection  [skill: skills/network/nmap/SKILL.md]
 whois         — domain registration info
 dig / nslookup — DNS enumeration
 curl / wget   — HTTP probing
@@ -54,7 +54,7 @@ nikto         — web vulnerability scanner
 gobuster      — directory/file brute force
 ```
 
-When using nmap: read skills/nmap/SKILL.md for command reference and output interpretation.
+When using nmap: read skills/network/nmap/SKILL.md for command reference and output interpretation.
 
 ## Mode Behavior
 

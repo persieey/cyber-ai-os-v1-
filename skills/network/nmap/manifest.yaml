@@ -11,7 +11,7 @@ used_by:
 
 phase: recon
 
-skill_file: skills/nmap/SKILL.md
+skill_file: skills/network/nmap/SKILL.md
 
 tags:
   - port-scan

@@ -39,21 +39,4 @@ departments:
     manifest: department/mobile-security/manifest.yaml
     status: active        # v2 Department Agent
 
-# ── Legacy Agents (Sprint 11 flat agents) ─────────────
-# status: legacy — ยังใช้งานได้ แต่จะถูกลบเมื่อ migration ครบ
-legacy_agents:
-  - .claude/agents/recon.md
-  - .claude/agents/enumeration.md
-  - .claude/agents/web-pentest.md
-  - .claude/agents/linux-privesc.md
-  - .claude/agents/windows-ad.md
-  - .claude/agents/reverse-engineering.md
-  - .claude/agents/report.md
-  - .claude/agents/lab-manager.md
-  - .claude/agents/coding.md
-  - .claude/agents/tool-expert.md
-  - .claude/agents/research.md
-  - .claude/agents/learning-coach.md
-  - .claude/agents/knowledge-manager.md
-
 routing_rules: department/coordinator/ROUTING_RULES.md

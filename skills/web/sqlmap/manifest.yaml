@@ -11,7 +11,7 @@ used_by:
 
 phase: exploitation
 
-skill_file: skills/sqlmap/SKILL.md
+skill_file: skills/web/sqlmap/SKILL.md
 
 tags:
   - sql-injection
