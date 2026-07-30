@@ -1,0 +1,20 @@
+name: reporting
+version: 2.0.0
+status: active
+agent: .claude/agents/reporting.md
+
+description: สร้าง report, writeup และ documentation จากผลการทำงาน
+
+roles:
+  specialists:
+    - {id: report-writer, file: roles/report-writer.md}
+    - {id: quality-reviewer, file: roles/quality-reviewer.md}
+
+templates:
+  - templates/lab-report.md
+  - templates/ctf-writeup.md
+  - templates/pentest-report.md
+
+routing_priority:
+  - "user ขอ writeup / CTF report → report-writer"
+  - "user ขอ review / check quality → quality-reviewer"

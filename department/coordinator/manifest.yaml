@@ -12,12 +12,12 @@ departments:
   - id: learning
     agent: .claude/agents/learning.md
     manifest: department/learning/manifest.yaml
-    status: legacy        # pending migration to v2
+    status: active        # v2 Department Agent
 
   - id: reporting
     agent: .claude/agents/reporting.md
     manifest: department/reporting/manifest.yaml
-    status: legacy        # pending migration to v2
+    status: active        # v2 Department Agent
 
   - id: defensive-security
     manifest: department/defensive-security/manifest.yaml
