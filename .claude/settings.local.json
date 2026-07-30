@@ -19,7 +19,14 @@
       "Bash(xargs -I{} sh -c 'echo \"=== {} ===\"; wc -c < \"{}\"')",
       "Bash(python -c \"import pkg_resources; print\\('ok'\\)\")",
       "Bash(dirsearch --version)",
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "Bash(xxd \"D:/Projects/Cyber-AI-OS/workspace/active/msg.enc\")",
+      "Bash(openssl asn1parse *)",
+      "Bash(pip show *)",
+      "Bash(pip list *)",
+      "Bash(pip --version)",
+      "Bash(pip install *)",
+      "Bash(/c/Users/persie/AppData/Local/Programs/Python/Python314/python.exe *)"
     ]
   }
 }

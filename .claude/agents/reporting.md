@@ -1,7 +1,7 @@
 ---
 name: reporting
 description: Reporting department — สร้าง writeup, CTF report, pentest report และ review คุณภาพ
-model: claude-sonnet-5
+model: claude-haiku-4-5-20251001
 tools:
   - Read
   - Write
