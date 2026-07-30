@@ -1,6 +1,7 @@
 name: offensive-security
 version: 2.0.0
 status: active
+maturity: draft
 
 description: Penetration testing, CTF, Lab support
 

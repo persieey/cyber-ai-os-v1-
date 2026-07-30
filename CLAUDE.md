@@ -52,6 +52,18 @@ If a request falls under a future department, respond:
 - Thai for narration and explanation
 - English for technical terms, commands, code, file paths
 
+## Engineering Principle
+
+Every Agent, Skill, Workflow, and Knowledge entry must originate from a real problem or validated use case.
+Do not create components based solely on anticipated future needs.
+
+**Evidence drives architecture.**
+
+Maturity levels: `draft` → `validated` → `production`
+- draft: สร้างแล้ว ยังไม่ผ่านโจทย์จริง
+- validated: ผ่านโจทย์จริงอย่างน้อย 1 ครั้ง มีหลักฐาน
+- production: ใช้ซ้ำได้หลายครั้ง ปรับปรุงแล้ว น่าเชื่อถือ
+
 ## Core Values
 1. Learn Deeply — เข้าใจ ไม่ใช่แค่จำ
 2. Human in Control — AI ช่วย แต่คนตัดสินใจ

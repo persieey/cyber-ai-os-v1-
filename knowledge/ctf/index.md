@@ -10,7 +10,7 @@
 
 | Pattern | File | Difficulty | Source |
 |---------|------|-----------|--------|
-| (เพิ่มเมื่อพบ pattern) | — | — | — |
+| Corrupted RSA key → FactorDB shortcut | [corrupted-rsa-key-factordb.md](corrupted-rsa-key-factordb.md) | Medium | picoCTF |
 
 ## Forensics Patterns
 
@@ -42,6 +42,7 @@
 
 - [Web Attack Checklist](web-checklist.md) — quick-ref สำหรับ web CTF
 - [MD5 IDOR Pattern](md5-idor.md) — IDOR via predictable MD5 hash
+- [Corrupted RSA Key Pattern](corrupted-rsa-key-factordb.md) — ASN.1 field diagnosis + FactorDB shortcut
 
 ---
 

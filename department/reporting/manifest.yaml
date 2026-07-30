@@ -1,6 +1,7 @@
 name: reporting
 version: 2.0.0
 status: active
+maturity: draft
 agent: .claude/agents/reporting.md
 
 description: สร้าง report, writeup และ documentation จากผลการทำงาน

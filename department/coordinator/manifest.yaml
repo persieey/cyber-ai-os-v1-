@@ -1,42 +1,50 @@
 name: coordinator
 version: 2.0.0
 status: active
+maturity: draft
 
 # ── Department Registry ────────────────────────────────
 departments:
   - id: offensive-security
     agent: .claude/agents/offensive-security.md
     manifest: department/offensive-security/manifest.yaml
-    status: active        # v2 Department Agent — use this
+    status: active
+maturity: draft        # v2 Department Agent — use this
 
   - id: learning
     agent: .claude/agents/learning.md
     manifest: department/learning/manifest.yaml
-    status: active        # v2 Department Agent
+    status: active
+maturity: draft        # v2 Department Agent
 
   - id: reporting
     agent: .claude/agents/reporting.md
     manifest: department/reporting/manifest.yaml
-    status: active        # v2 Department Agent
+    status: active
+maturity: draft        # v2 Department Agent
 
   - id: defensive-security
     agent: .claude/agents/defensive-security.md
     manifest: department/defensive-security/manifest.yaml
-    status: active        # v2 Department Agent
+    status: active
+maturity: draft        # v2 Department Agent
 
   - id: malware-analysis
     agent: .claude/agents/malware-analysis.md
     manifest: department/malware-analysis/manifest.yaml
-    status: active        # v2 Department Agent
+    status: active
+maturity: draft        # v2 Department Agent
 
   - id: cloud-security
     agent: .claude/agents/cloud-security.md
     manifest: department/cloud-security/manifest.yaml
-    status: active        # v2 Department Agent
+    status: active
+maturity: draft        # v2 Department Agent
 
   - id: mobile-security
     agent: .claude/agents/mobile-security.md
     manifest: department/mobile-security/manifest.yaml
-    status: active        # v2 Department Agent
+    status: active
+maturity: draft        # v2 Department Agent
 
 routing_rules: department/coordinator/ROUTING_RULES.md

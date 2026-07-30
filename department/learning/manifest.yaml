@@ -1,6 +1,7 @@
 name: learning
 version: 2.0.0
 status: active
+maturity: draft
 agent: .claude/agents/learning.md
 
 description: สอน concept ด้าน Cybersecurity และ Computer Science ให้เข้าใจจริง

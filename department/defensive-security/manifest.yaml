@@ -1,6 +1,7 @@
 name: defensive-security
 version: 2.0.0
 status: active
+maturity: draft
 agent: .claude/agents/defensive-security.md
 
 description: Blue team operations — SOC, Incident Response, Threat Hunting, Hardening

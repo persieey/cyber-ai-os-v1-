@@ -1,6 +1,7 @@
 name: mobile-security
 version: 2.0.0
 status: active
+maturity: draft
 agent: .claude/agents/mobile-security.md
 
 description: Mobile security — Android/iOS analysis, APK reversing, dynamic instrumentation, mobile pentest

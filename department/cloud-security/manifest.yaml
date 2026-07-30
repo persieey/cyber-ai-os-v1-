@@ -1,6 +1,7 @@
 name: cloud-security
 version: 2.0.0
 status: active
+maturity: draft
 agent: .claude/agents/cloud-security.md
 
 description: Cloud security — AWS/Azure/GCP audit, misconfiguration, cloud pentesting

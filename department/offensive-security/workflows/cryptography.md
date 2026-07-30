@@ -50,6 +50,10 @@ Done when: รู้ทุกอย่างที่ให้มา
 ### Phase 3: Attack
 **Goal:** Decrypt ciphertext
 
+**หลักการ: scope ก่อนลงมือ — เรียงจากถูก/เร็วไปหาแพง/ช้า อย่า implement ทุก attack พร้อมกัน**
+ลองวิธี "เช็คของสำเร็จรูป" (online DB, automated tool) ก่อนเขียน custom script เสมอ
+ถ้าวิธีถูกไม่เจอค่อยขยับไปวิธีที่ซับซ้อนขึ้นทีละสเต็ป — ประหยัดทั้งเวลาและ token
+
 #### Classical Ciphers
 ```python
 # Caesar / ROT-n → brute force ทุก rotation
@@ -78,6 +82,21 @@ int(ciphertext, 2).to_bytes(...)  # binary
 ```
 
 #### RSA
+
+**ก่อนเขียนโค้ด custom attack (Coppersmith/lattice/Wiener) ให้เช็คของถูกก่อนเสมอ — ไม่งั้นเสียเวลา/token ฟรี:**
+
+```
+1. เช็ค n กับ FactorDB ก่อนเสมอ (วินาทีเดียว, ฟรี)
+   GET http://factordb.com/api?query=<n>
+   status "FF"/"F" = ได้ p,q ทันที ไม่ต้องทำอะไรต่อ
+
+2. ถ้าไม่มีใน FactorDB → ลอง RsaCtfTool อัตโนมัติก่อน (ครอบคลุมหลาย attack พร้อมกัน)
+   python RsaCtfTool.py --publickey pub.pem --uncipherfile cipher.bin --attack all
+
+3. ต่อเมื่อ 1-2 ไม่เจอ ค่อยพิจารณา manual/custom attack ตาม signature ที่เจอจริง
+   (ดู bit ที่รู้/ไม่รู้ของ p,q,d,e ก่อนเลือกว่าจะ implement อะไร — อย่า implement ทุกอย่างไล่ตาม)
+```
+
 ```python
 # Small e attack (e=3, small message)
 from gmpy2 import iroot
@@ -85,9 +104,9 @@ m, exact = iroot(c, e)
 if exact:
     print(long_to_bytes(m))
 
-# Factorization → factordb.com
 # Wiener attack → small d
 # n=p*q, p,q ใกล้กัน → Fermat factorization
+# รู้ high/low bits บางส่วนของ p → Coppersmith (ต้อง sage/fpylll — หนักสุด ทำเป็นตัวเลือกสุดท้าย)
 ```
 
 #### Hash Cracking
