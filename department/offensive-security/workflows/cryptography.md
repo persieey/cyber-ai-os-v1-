@@ -107,6 +107,10 @@ if exact:
 # Wiener attack → small d
 # n=p*q, p,q ใกล้กัน → Fermat factorization
 # รู้ high/low bits บางส่วนของ p → Coppersmith (ต้อง sage/fpylll — หนักสุด ทำเป็นตัวเลือกสุดท้าย)
+#   - รู้ต่อเนื่องเป็นก้อนเดียว (prefix/suffix) → univariate Coppersmith
+#   - รู้เป็นหลายช่วงกระจัดกระจาย (multiple zero-byte gaps ใน p) → multivariate Coppersmith
+#     ต้อง Sage จริง (sage.all) ไม่ใช่แค่ sympy/fpylll — ดู knowledge/ctf/multivariate-coppersmith-corrupted-p.md
+#     sagecell.sagemath.org (free) ฆ่า kernel ทิ้งหลังรันหนักไม่กี่วิ — ใช้ WSL2 + conda-forge sage แทนถ้างานหนักจริง
 ```
 
 #### Hash Cracking

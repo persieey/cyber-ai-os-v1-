@@ -11,6 +11,7 @@
 | Pattern | File | Difficulty | Source |
 |---------|------|-----------|--------|
 | Corrupted RSA key → FactorDB shortcut | [corrupted-rsa-key-factordb.md](corrupted-rsa-key-factordb.md) | Medium | picoCTF |
+| Multi-gap corrupted RSA prime → multivariate Coppersmith | [multivariate-coppersmith-corrupted-p.md](multivariate-coppersmith-corrupted-p.md) | Hard | picoMini |
 
 ## Forensics Patterns
 
@@ -43,6 +44,7 @@
 - [Web Attack Checklist](web-checklist.md) — quick-ref สำหรับ web CTF
 - [MD5 IDOR Pattern](md5-idor.md) — IDOR via predictable MD5 hash
 - [Corrupted RSA Key Pattern](corrupted-rsa-key-factordb.md) — ASN.1 field diagnosis + FactorDB shortcut
+- [Multivariate Coppersmith Pattern](multivariate-coppersmith-corrupted-p.md) — multi-gap corrupted prime, WSL+Sage setup
 
 ---
 
