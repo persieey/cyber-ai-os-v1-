@@ -1,4 +1,4 @@
-# Cyber AI OS
+# Cyber AI OS (beta)
 
 ระบบ AI สำหรับงาน Cybersecurity ที่รันอยู่บน Claude Code
 ไม่ใช่แค่ chatbot — มันคือ OS ที่มี Departments, Roles, Skills, และ Memory
