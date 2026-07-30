@@ -2,9 +2,14 @@
 # web-enum.sh — Web enumeration pipeline: gobuster + ffuf + nikto
 # Usage: ./web-enum.sh <url> [wordlist]
 
+# Load config
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+source "$PROJECT_ROOT/config/_load.sh" 2>/dev/null || true
+
 URL=$1
-WORDLIST=${2:-"/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt"}
-OUTPUT_DIR="workspace/active"
+WORDLIST=${2:-"${WL_DIRECTORY:-/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt}"}
+OUTPUT_DIR="${WS_ACTIVE:-workspace/active}"
 
 if [ -z "$URL" ]; then
   echo "Usage: $0 <url> [wordlist]"
@@ -41,7 +46,7 @@ echo "[3] VHost fuzzing (ffuf)..."
 HOST=$(echo "$URL" | sed 's|https\?://||' | cut -d/ -f1)
 ffuf -u "$URL" \
   -H "Host: FUZZ.$HOST" \
-  -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt \
+  -w "${WL_DNS:-/usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt}" \
   -mc 200,301,302,403 \
   -t 50 -s \
   -o "$OUTPUT_DIR/ffuf-vhost.json" 2>/dev/null

@@ -1,0 +1,25 @@
+# config/ai.yaml
+# AI behavior settings — Coordinator reads this on startup
+
+# ── Default Mode ──────────────────────────────────────
+defaults:
+  ctf_mode:   Hint          # Hint / Guided / Walkthrough / Full Solution
+  lab_mode:   Guided
+  learn_mode: Adaptive
+
+# ── Active Departments ────────────────────────────────
+departments:
+  offensive-security:  active
+  defensive-security:  active
+  malware-analysis:    active
+  cloud-security:      active
+  mobile-security:     active
+  learning:            active
+  reporting:           active
+
+# ── Behavior ──────────────────────────────────────────
+behavior:
+  language:        th          # th = ไทย, en = English
+  ask_before_full_solution: true
+  auto_update_session: true
+  suggest_kb_after_ctf: true

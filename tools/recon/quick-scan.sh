@@ -2,9 +2,15 @@
 # quick-scan.sh — Full recon pipeline: nmap + web enum
 # Usage: ./quick-scan.sh <target-ip> [domain]
 
+# Load config
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
+# shellcheck source=../../config/_load.sh
+source "$PROJECT_ROOT/config/_load.sh" 2>/dev/null || true
+
 TARGET=$1
 DOMAIN=$2
-OUTPUT_DIR="workspace/active"
+OUTPUT_DIR="${WS_ACTIVE:-workspace/active}"
 
 if [ -z "$TARGET" ]; then
   echo "Usage: $0 <target-ip> [domain]"
@@ -44,7 +50,7 @@ if echo "$PORTS" | grep -qE "80|443|8080|8443"; then
   echo ""
   echo "[*] Directory bruteforce (gobuster)..."
   gobuster dir -u "$URL" \
-    -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt \
+    -w "${WL_DIRECTORY:-/usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt}" \
     -x php,html,txt,js,py \
     -t 50 --no-error -q \
     -o "$OUTPUT_DIR/gobuster.txt" 2>/dev/null

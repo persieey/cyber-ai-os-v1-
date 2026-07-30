@@ -1,0 +1,133 @@
+# tests/routing_cases.yaml
+# Test cases for Coordinator routing validation
+# Format: prompt → expected_department
+# ใช้ reference ตรวจสอบว่า Coordinator ส่ง task ไปถูก dept ไหม
+# (รัน manual หรือใช้ test_routing.py ในอนาคต)
+
+version: "1.0"
+description: "Routing test cases for Cyber AI OS Coordinator"
+
+cases:
+
+  # ── Offensive Security ────────────────────────────────────────────────────
+  - prompt: "ช่วย enumerate port ของ 10.10.10.1 หน่อย"
+    expected: offensive-security
+    keywords: [nmap, port, enumerate, recon]
+
+  - prompt: "ทำ CTF Web challenge — ช่อง SQL injection"
+    expected: offensive-security
+    keywords: [ctf, sqli, web]
+
+  - prompt: "reverse shell ที่ใช้กับ linux target ได้เลย"
+    expected: offensive-security
+    keywords: [reverse shell, exploit]
+
+  - prompt: "crack hash นี้: 5f4dcc3b5aa765d61d8327deb882cf99"
+    expected: offensive-security
+    keywords: [hash, crack, john, hashcat]
+
+  - prompt: "privilege escalation บน Linux หลังจาก get initial shell แล้ว"
+    expected: offensive-security
+    keywords: [privesc, linux, shell]
+
+  - prompt: "decompile binary นี้แล้วหา flag"
+    expected: offensive-security
+    keywords: [rev, binary, ghidra, flag]
+
+  - prompt: "pwn challenge — buffer overflow 64-bit"
+    expected: offensive-security
+    keywords: [pwn, bof, pwntools, exploit]
+
+  - prompt: "subdomain enumeration ของ example.com"
+    expected: offensive-security
+    keywords: [subdomain, dns, recon]
+
+  # ── Defensive Security ────────────────────────────────────────────────────
+  - prompt: "มี alert ใน SIEM ที่น่าสงสัย ช่วยวิเคราะห์หน่อย"
+    expected: defensive-security
+    keywords: [soc, alert, siem, log]
+
+  - prompt: "ระบบโดน ransomware ต้องทำ incident response ยังไง"
+    expected: defensive-security
+    keywords: [incident, ir, ransomware, response]
+
+  - prompt: "threat hunting hypothesis สำหรับ lateral movement"
+    expected: defensive-security
+    keywords: [hunt, threat, lateral, hypothesis]
+
+  - prompt: "harden Linux server ตาม CIS benchmark"
+    expected: defensive-security
+    keywords: [harden, cis, benchmark, linux]
+
+  - prompt: "log จาก firewall มี traffic แปลกๆ ช่วยดูให้หน่อย"
+    expected: defensive-security
+    keywords: [log, firewall, traffic, soc]
+
+  # ── Malware Analysis ──────────────────────────────────────────────────────
+  - prompt: "วิเคราะห์ sample.exe ที่ได้มา ไม่รู้ว่าเป็น malware ไหม"
+    expected: malware-analysis
+    keywords: [malware, sample, exe, static]
+
+  - prompt: "extract IOC จาก PCAP นี้"
+    expected: malware-analysis
+    keywords: [ioc, pcap, extract]
+
+  - prompt: "เขียน YARA rule สำหรับ detect ransomware family นี้"
+    expected: malware-analysis
+    keywords: [yara, rule, detect, ransomware]
+
+  - prompt: "strings analysis ของ dll ที่น่าสงสัย"
+    expected: malware-analysis
+    keywords: [strings, dll, static, malware]
+
+  # ── Cloud Security ────────────────────────────────────────────────────────
+  - prompt: "audit S3 bucket permissions ใน AWS account"
+    expected: cloud-security
+    keywords: [aws, s3, bucket, audit]
+
+  - prompt: "IAM policy ของ role นี้ overprivileged ไหม"
+    expected: cloud-security
+    keywords: [iam, policy, aws, cloud]
+
+  - prompt: "scan Azure subscription ด้วย ScoutSuite"
+    expected: cloud-security
+    keywords: [azure, scout, cloud, audit]
+
+  - prompt: "cloud pentest — เจาะ AWS environment"
+    expected: cloud-security
+    keywords: [cloud, pentest, aws, pacu]
+
+  # ── Mobile Security ───────────────────────────────────────────────────────
+  - prompt: "decompile APK แล้วหา hardcoded API key"
+    expected: mobile-security
+    keywords: [apk, android, decompile, jadx]
+
+  - prompt: "intercept traffic จาก iOS app ด้วย Frida"
+    expected: mobile-security
+    keywords: [ios, frida, intercept, mobile]
+
+  - prompt: "dynamic analysis APK ใน Android emulator"
+    expected: mobile-security
+    keywords: [apk, android, dynamic, adb]
+
+  # ── Learning ──────────────────────────────────────────────────────────────
+  - prompt: "อธิบาย SQL injection ให้หน่อย ยังไม่เข้าใจ"
+    expected: learning
+    keywords: [อธิบาย, สอน, explain, concept]
+
+  - prompt: "สร้าง learning path สำหรับ web pentesting"
+    expected: learning
+    keywords: [learning, path, roadmap, สอน]
+
+  - prompt: "อยากเรียน buffer overflow ตั้งแต่ต้น"
+    expected: learning
+    keywords: [เรียน, learn, bof, concept]
+
+  # ── Reporting ─────────────────────────────────────────────────────────────
+  - prompt: "เขียน CTF writeup สำหรับ challenge นี้"
+    expected: reporting
+    keywords: [writeup, ctf, report]
+
+  - prompt: "สรุปผล pentest เป็น report ให้ลูกค้า"
+    expected: reporting
+    keywords: [report, pentest, documentation]

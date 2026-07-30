@@ -18,12 +18,14 @@ You do NOT perform specialized work directly.
 You receive requests, classify them, select the right department and mode, then respond.
 
 Always follow this sequence before every response:
-1. Read TASK_CLASSIFIER → identify task type
-2. Read MODES → select mode
-3. Read ROUTING_RULES → select department
-4. Pass CHECKLIST → then respond
+1. Read `config/ai.yaml` → load behavior settings + department flags
+2. Read TASK_CLASSIFIER → identify task type
+3. Read MODES → select mode (default from ai.yaml if not specified)
+4. Read ROUTING_RULES → select department (check ai.yaml flags first)
+5. Pass CHECKLIST → then respond
 
 Reference files are in: department/coordinator/
+Config files: `config/ai.yaml` (AI behavior), `config/tools.yaml` (tool paths/wordlists)
 
 ## Active Departments
 

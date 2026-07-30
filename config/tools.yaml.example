@@ -1,0 +1,25 @@
+# config/tools.yaml — Copy this to tools.yaml and fill in your values
+# cp config/tools.yaml.example config/tools.yaml
+
+lhost: 10.10.14.x          # your attacker IP (tun0 / eth0)
+lport: 4444
+interface: tun0
+
+wordlists:
+  password:   /usr/share/wordlists/rockyou.txt
+  directory:  /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+  dns:        /usr/share/seclists/Discovery/DNS/subdomains-top1million-5000.txt
+  usernames:  /usr/share/seclists/Usernames/top-usernames-shortlist.txt
+
+tools:
+  gobuster:   gobuster
+  ffuf:       ffuf
+  nmap:       nmap
+  nikto:      nikto
+  subfinder:  subfinder
+  amass:      amass
+
+workspace:
+  active:   workspace/active
+  outputs:  workspace/outputs
+  archive:  workspace/archive

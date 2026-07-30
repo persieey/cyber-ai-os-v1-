@@ -1,0 +1,19 @@
+# Active session (มี IP/target จริง)
+workspace/active/
+workspace/outputs/
+
+# Personal config (มี LHOST/LPORT ของตัวเอง)
+config/tools.yaml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
