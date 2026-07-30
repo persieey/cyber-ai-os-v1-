@@ -1,16 +1,43 @@
 name: coordinator
+version: 2.0.0
+status: active
 
-version: 0.1.0
-
-status: development
-
-owner: Cyber AI OS
-
-depends_on: []
-
+# ── Department Registry ────────────────────────────────
 departments:
-  - offensive-security
-  - defensive-security
-  - reporting
-  - learning
-  - shared
+  - id: offensive-security
+    agent: .claude/agents/offensive-security.md
+    manifest: department/offensive-security/manifest.yaml
+    status: active        # v2 Department Agent — use this
+
+  - id: learning
+    agent: .claude/agents/learning.md
+    manifest: department/learning/manifest.yaml
+    status: legacy        # pending migration to v2
+
+  - id: reporting
+    agent: .claude/agents/reporting.md
+    manifest: department/reporting/manifest.yaml
+    status: legacy        # pending migration to v2
+
+  - id: defensive-security
+    manifest: department/defensive-security/manifest.yaml
+    status: planned       # not yet built
+
+# ── Legacy Agents (Sprint 11 flat agents) ─────────────
+# status: legacy — ยังใช้งานได้ แต่จะถูกลบเมื่อ migration ครบ
+legacy_agents:
+  - .claude/agents/recon.md
+  - .claude/agents/enumeration.md
+  - .claude/agents/web-pentest.md
+  - .claude/agents/linux-privesc.md
+  - .claude/agents/windows-ad.md
+  - .claude/agents/reverse-engineering.md
+  - .claude/agents/report.md
+  - .claude/agents/lab-manager.md
+  - .claude/agents/coding.md
+  - .claude/agents/tool-expert.md
+  - .claude/agents/research.md
+  - .claude/agents/learning-coach.md
+  - .claude/agents/knowledge-manager.md
+
+routing_rules: department/coordinator/ROUTING_RULES.md

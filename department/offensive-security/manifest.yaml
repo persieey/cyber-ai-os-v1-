@@ -1,29 +1,75 @@
 name: offensive-security
-
-version: 0.1.0
-
+version: 2.0.0
 status: active
 
-owner: Cyber AI OS
+description: Penetration testing, CTF, Lab support
 
-description: Penetration testing, CTF, และ lab support โดยเน้นสอนให้เข้าใจ
+agent: .claude/agents/offensive-security.md
 
-depends_on:
-  - coordinator
+# ── Roles ──────────────────────────────────────────────
+roles:
+  manager: department/offensive-security/roles/manager.md
+  specialists:
+    - id: recon-analyst
+      file: department/offensive-security/roles/recon-analyst.md
+      phase: recon
+    - id: enumeration-analyst
+      file: department/offensive-security/roles/enumeration-analyst.md
+      phase: enumeration
+    - id: web-pentest-specialist
+      file: department/offensive-security/roles/web-pentest-specialist.md
+      phase: exploitation
+    - id: exploit-analyst
+      file: department/offensive-security/roles/exploit-analyst.md
+      phase: exploitation
+    - id: linux-privesc-specialist
+      file: department/offensive-security/roles/linux-privesc-specialist.md
+      phase: post-exploitation
+    - id: windows-ad-specialist
+      file: department/offensive-security/roles/windows-ad-specialist.md
+      phase: post-exploitation
+    - id: rev-engineer
+      file: department/offensive-security/roles/rev-engineer.md
+      phase: exploitation
+    - id: report-writer
+      file: department/offensive-security/roles/report-writer.md
+      phase: reporting
 
-prompt: department/offensive-security/PROMPT.md
+# ── Skills (categorized) ───────────────────────────────
+skills:
+  network:
+    - skills/network/nmap
+    - skills/network/dns
+  web:
+    - skills/web/gobuster
+    - skills/web/ffuf
+    - skills/web/sqlmap
+  exploitation:
+    - skills/exploitation/john
+    - skills/exploitation/hashcat
+  scripting:
+    - skills/scripting/python-exploit
+    - skills/scripting/pwntools
 
-active_capabilities:
-  - recon
-  - enumeration
-  - web-pentest
-  - ctf-support
+# ── Workflows ──────────────────────────────────────────
+workflows:
+  - id: boot2root
+    file: department/offensive-security/workflows/boot2root.md
+  - id: web-exploitation
+    file: department/offensive-security/workflows/web-exploitation.md
+  - id: cryptography
+    file: department/offensive-security/workflows/cryptography.md
+  - id: forensics
+    file: department/offensive-security/workflows/forensics.md
+  - id: reverse-engineering
+    file: department/offensive-security/workflows/reverse-engineering.md
 
+# ── Routing ────────────────────────────────────────────
 routes_from:
   - coordinator
-
-default_mode: hint
 
 cannot_handle:
   - unauthorized-real-world-attacks
   - out-of-scope-testing
+
+default_mode: hint
