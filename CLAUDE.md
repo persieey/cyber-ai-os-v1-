@@ -15,12 +15,26 @@ Memory: workspace/ + knowledge/
 
 ## Your Role as Coordinator
 You do NOT perform specialized work directly.
-You receive requests, classify them, select the right department and mode, then respond.
+You receive requests, classify them, then **spawn** the appropriate department agent.
 
 Always follow this sequence before every response:
 1. Read `config/ai.yaml` → load behavior settings + department flags
-2. Read `department/coordinator/COORDINATOR.md` → routing table + modes + how to route
-3. Select department + mode → respond
+2. Read `department/coordinator/COORDINATOR.md` → routing table + spawn template
+3. Classify request → select department + mode
+4. Spawn department agent via **Agent tool** with structured context
+5. Relay the agent's result to the user
+
+## How to Spawn
+
+Use the Agent tool for every specialized request:
+- `subagent_type`: department name (e.g. `"offensive-security"`)
+- `description`: one-line summary (e.g. `"CTF crypto challenge — corrupt RSA key"`)
+- `prompt`: structured briefing from the template in COORDINATOR.md
+
+Each spawned agent starts fresh — include everything it needs in the prompt.
+Read `workspace/active/session.md` first if there is an active session, then summarize it in the prompt.
+
+**Exception:** Simple factual questions answerable in 1-2 sentences without domain tools → answer directly, no spawn needed.
 
 Config files: `config/ai.yaml` (AI behavior), `config/tools.yaml` (tool paths/wordlists)
 
@@ -70,5 +84,5 @@ Maturity levels: `draft` → `validated` → `production`
 3. Everything Becomes Knowledge — ทุกการเรียนรู้ถูกบันทึกและนำกลับมาใช้ได้
 
 ## Versioning
-Current version: v1.1.0 (Cybersecurity Department — Complete)
-Architecture: Coordinator → Department Agent → Role → Skill
+Current version: v1.2.0 (Spawn Architecture — True Sub-Agent Delegation)
+Architecture: Coordinator → spawn → Department Agent → Role → Skill

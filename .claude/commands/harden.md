@@ -1,57 +1,40 @@
 # Security Hardening Entry Point
 
-Read these files in order:
-1. `department/defensive-security/roles/hardening-specialist.md` — your role
-
 Arguments: $ARGUMENTS
 (Expected: `linux` | `windows` | `web <server>` | `network` | `cloud <provider>`)
 
 ---
 
-## If target is "linux"
-Run the Linux hardening checklist from `roles/hardening-specialist.md`
-Focus areas: SSH, users, services, filesystem, firewall, logging
+## Your job as Coordinator
 
-## If target is "windows"
-Run Windows hardening checklist
-Focus areas: SMB, RDP, Defender, audit policy, local accounts, PowerShell logging
+ตรวจ argument ก่อน:
+- ถ้า argument มีคำว่า `cloud` → **spawn `cloud-security` agent**
+- อื่นๆ ทั้งหมด → **spawn `defensive-security` agent**
 
-## If target is "web <nginx|apache|iis>"
-Web server hardening:
-- HTTP security headers (CSP, HSTS, X-Frame-Options)
-- TLS configuration (disable TLS 1.0/1.1, weak ciphers)
-- Directory listing disabled
-- Server version hidden
-- Rate limiting
+Spawn ด้วย prompt ต่อไปนี้:
 
-## If target is "network"
-Network device hardening:
-- Default credentials changed
-- Unused services/ports closed
-- Management plane restricted
-- NTP, Syslog configured
-- SNMP v3 only
-
-## If target is "cloud <aws|azure|gcp>"
-Route to cloud-security department:
-- Load appropriate auditor role
-- Run CIS Benchmark checks
-
----
-
-## Output Format
 ```
-## [Target] Hardening Report
+## Request
+Hardening command: /harden $ARGUMENTS
 
-### Critical (แก้ทันที)
-- [ ] item: ปัญหา → วิธีแก้
+## Mode
+Walkthrough (default สำหรับ hardening)
 
-### High
-- [ ] ...
+## Date
+<today's date>
 
-### Passed ✅
-- [x] ...
+## Session Context
+No active session required for hardening
+
+## Notes
+- Role: hardening-specialist
+- Targets: linux | windows | web (nginx/apache/iis) | network | cloud (aws/azure/gcp)
+- Output format:
+  ## [Target] Hardening Report
+  ### Critical (แก้ทันที) — [ ] item: ปัญหา → วิธีแก้
+  ### High — [ ] ...
+  ### Passed ✅ — [x] ...
+- cloud target → ใช้ CIS Benchmark + run audit checks ตาม provider
 ```
 
-Start response with:
-**[Hardening] [Target: <target>]**
+Relay ผลที่ได้กลับให้ user ทันที

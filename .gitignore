@@ -2,6 +2,10 @@
 workspace/active/
 workspace/outputs/
 
+# challenges/ ถูก track เพื่อเก็บ notes — แต่ยกเว้น binary challenge files ขนาดใหญ่
+# (ถ้าต้องการ exclude เพิ่ม ให้เพิ่มที่นี่)
+
+
 # Personal config (มี LHOST/LPORT ของตัวเอง)
 config/tools.yaml
 

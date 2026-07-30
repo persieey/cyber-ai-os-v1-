@@ -1,48 +1,35 @@
 # Incident Response Entry Point
 
-Read these files in order:
-1. `workspace/active/session.md` — check for existing IR session
-2. `department/defensive-security/workflows/incident-response.md` — IR workflow
-3. `department/defensive-security/roles/incident-responder.md` — your role
-
 Arguments: $ARGUMENTS
 (Expected: `start <incident-type> <hostname>` | `resume` | `report`)
 
 ---
 
-## If action is "start <incident-type> <hostname>"
+## Your job as Coordinator
 
-Incident types: ransomware | breach | intrusion | phishing | malware | ddos
+อ่าน `workspace/active/session.md` แล้ว **spawn `defensive-security` agent** ด้วย prompt ต่อไปนี้:
 
-1. Create session in `workspace/active/session.md`:
-   - type: Incident Response
-   - incident_type: <type>
-   - hostname: <hostname>
-   - department: defensive-security
-   - phase: Identification
-   - started: today's date
-   - severity: [Critical/High/Medium/Low]
+```
+## Request
+IR command: /ir $ARGUMENTS
 
-2. Load `department/defensive-security/workflows/incident-response.md`
-3. Begin Phase 1: Identification
-4. Ask: "มีข้อมูลเพิ่มเติมไหม? (alerts, logs, screenshots)"
+## Mode
+Walkthrough (default สำหรับ IR)
 
----
+## Date
+<today's date>
 
-## If action is "resume"
-1. Read session.md → current phase + incident type
-2. Summarize: what's done, what's pending
-3. Continue from current phase
+## Session Context
+<สรุปจาก workspace/active/session.md หรือ "No active session">
 
----
+## Notes
+- Role: incident-responder
+- Workflow: department/defensive-security/workflows/incident-response.md
+- Incident types: ransomware | breach | intrusion | phishing | malware | ddos
+- If action is "start <type> <hostname>": สร้าง session.md (type: IR, incident_type, hostname, phase: Identification)
+  เริ่ม Phase 1: Identification → ถาม user หา alerts/logs/screenshots เพิ่มเติม
+- If action is "resume": อ่าน session.md → สรุปความคืบหน้า → ทำต่อ
+- If action is "report": สร้าง IR report (Timeline | Root Cause | Impact | Remediation | Lessons) → ถามก่อน save
+```
 
-## If action is "report"
-1. Read session.md → all findings
-2. Read `templates/pentest-report.md` → adapt for IR
-3. Generate: Timeline | Root Cause | Impact | Remediation | Lessons Learned
-4. Ask: "บันทึก report ไว้ที่ workspace/outputs/<hostname>-ir-report.md ไหม?"
-
----
-
-Start response with:
-**[IR] [<incident-type>] [Host: <hostname>] [Phase: <phase>] [Severity: <severity>]**
+Relay ผลที่ได้กลับให้ user ทันที

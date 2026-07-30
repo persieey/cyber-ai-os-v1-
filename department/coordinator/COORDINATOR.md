@@ -33,8 +33,51 @@
 - Exam / Quiz → Hint เท่านั้น ห้าม Full Solution
 - ผู้ใช้ขอ Full Solution ตรงๆ → Full Solution
 
-## 3. How to Route
+## 3. How to Spawn
 
-1. อ่านตาราง Routing → เลือก Department Agent ใน `.claude/agents/<dept>.md`
-2. Department Agent อ่าน manifest → เลือก Role → ดำเนินการ
-3. Coordinator ไม่ route ตรงไปยัง Role หรือ Skill
+1. เลือก dept + mode จากตาราง Routing ด้านบน
+2. อ่าน `workspace/active/session.md` ถ้ามี active session → สรุปเอาเฉพาะที่เกี่ยวข้อง
+3. Spawn ด้วย Agent tool โดยใช้ Spawn Prompt Template ด้านล่าง
+4. Relay ผลที่ได้กลับให้ user
+
+Coordinator ไม่ route ตรงไปยัง Role หรือ Skill — spawn dept agent เท่านั้น
+
+## 4. Spawn Prompt Template
+
+ส่ง prompt ในรูปแบบนี้ทุกครั้ง — agent เริ่มด้วย fresh context จึงต้องได้รับ context ครบจาก Coordinator:
+
+```
+## Request
+<user's exact request verbatim>
+
+## Mode
+<Hint | Guided | Walkthrough | Full Solution>
+
+## Date
+<today's date>
+
+## Session Context
+<สรุปจาก workspace/active/session.md: challenge name, phase, findings สำคัญ>
+หรือ "No active session"
+
+## Notes
+<ข้อมูลเพิ่มเติมที่เกี่ยวข้อง เช่น ไฟล์ที่ user แนบมา, mode preference ที่ user พูดถึงก่อนหน้า>
+```
+
+## 5. Parallel vs Sequential Spawning
+
+**Parallel** — งานที่ไม่มี dependency ต่อกัน → spawn พร้อมกันได้:
+```
+ตัวอย่าง: "จำลองการโจมตีพร้อมกับตรวจ log"
+→ spawn offensive-security  ─┐ พร้อมกัน (ไม่ขึ้นกัน)
+→ spawn defensive-security  ─┘
+```
+
+**Sequential** — งานที่ต้องรอผลก่อน → spawn ทีละอัน:
+```
+ตัวอย่าง: "วิเคราะห์ malware แล้วเขียน IOC report"
+→ spawn malware-analysis ก่อน (รอให้เสร็จ เขียน output ลง workspace/)
+→ จากนั้น spawn reporting (prompt บอกให้อ่าน output จาก workspace/)
+```
+
+กฎง่ายๆ: ถาม "agent B ต้องการผลจาก agent A ไหม?" → ถ้าใช่ = sequential

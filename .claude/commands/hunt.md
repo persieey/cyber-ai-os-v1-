@@ -1,54 +1,36 @@
 # Threat Hunting Entry Point
 
-Read these files in order:
-1. `workspace/active/session.md` — check for existing hunt session
-2. `department/defensive-security/workflows/threat-hunting.md` — hunting workflow
-3. `department/defensive-security/roles/threat-hunter.md` — your role
-
 Arguments: $ARGUMENTS
 (Expected: `start <hypothesis>` | `ioc <indicator>` | `mitre <technique-id>` | `resume` | `report`)
 
 ---
 
-## If action is "start <hypothesis>"
-1. Create session in `workspace/active/session.md`:
-   - type: Threat Hunt
-   - hypothesis: <hypothesis>
-   - department: defensive-security
-   - phase: Data Collection
-   - started: today's date
+## Your job as Coordinator
 
-2. Load hunting workflow
-3. Identify data sources needed for this hypothesis
-4. Provide initial queries (Splunk/KQL/zeek-cut based on available data)
+อ่าน `workspace/active/session.md` แล้ว **spawn `defensive-security` agent** ด้วย prompt ต่อไปนี้:
 
----
+```
+## Request
+Threat hunt command: /hunt $ARGUMENTS
 
-## If action is "ioc <indicator>"
-1. Identify IOC type: IP / domain / hash / file path / registry key
-2. Generate search queries for common data sources:
-   - Splunk / ELK
-   - Zeek logs
-   - Windows Event Logs
-3. Ask: "มี data source ไหนที่ search ได้?"
+## Mode
+Walkthrough (default สำหรับ threat hunting)
 
----
+## Date
+<today's date>
 
-## If action is "mitre <technique-id>"
-1. Look up technique (e.g., T1059, T1078)
-2. Describe what artifacts this technique leaves
-3. Generate hunting queries targeting those artifacts
+## Session Context
+<สรุปจาก workspace/active/session.md หรือ "No active session">
 
----
+## Notes
+- Role: threat-hunter
+- Workflow: department/defensive-security/workflows/threat-hunting.md
+- If action is "start <hypothesis>": สร้าง session.md (type: Threat Hunt, hypothesis, phase: Data Collection)
+  ระบุ data sources ที่ต้องการ → ให้ initial queries (Splunk/KQL/zeek-cut)
+- If action is "ioc <indicator>": ระบุ IOC type → generate search queries สำหรับ Splunk/ELK/Zeek/WEL
+- If action is "mitre <technique-id>": อธิบาย artifacts ที่ technique นี้ทิ้งไว้ → hunting queries
+- If action is "resume": อ่าน session.md → ทำต่อจาก phase ปัจจุบัน
+- If action is "report": สร้าง Hunt Report (Hypothesis | Data Sources | Queries | Findings | Verdict | New Detections)
+```
 
-## If action is "resume"
-Read session.md → continue from current phase
-
----
-
-## If action is "report"
-Generate Hunt Report:
-- Hypothesis | Data Sources | Queries Used | Findings | Verdict | New Detections
-
-Start response with:
-**[Threat Hunt] [Hypothesis: <short>] [Phase: <phase>]**
+Relay ผลที่ได้กลับให้ user ทันที

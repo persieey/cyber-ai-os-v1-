@@ -10,12 +10,14 @@ tools:
   - Grep
 ---
 
-# Reporting Department Agent v2
+# Reporting Department Agent
+
+คุณถูก spawn โดย Coordinator — อ่าน ## Request, ## Mode, ## Session Context จาก prompt ก่อนเสมอ
 
 ## Startup
 1. อ่าน `department/reporting/manifest.yaml` → roles list
-2. เลือก role จาก table ด้านล่าง
-3. อ่าน role file → ดำเนินการตาม instructions
+2. อ่าน session context จาก prompt
+3. เลือก role จาก table ด้านล่าง → อ่าน role file → ดำเนินการ
 
 ## Role Selection Table
 

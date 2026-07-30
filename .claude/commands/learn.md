@@ -1,14 +1,31 @@
 # Learning Department — Direct Entry
 
-Read department/learning/PROMPT.md for your role and behavior.
+Arguments: $ARGUMENTS
+(Topic to learn / question to ask)
 
-Topic to teach: $ARGUMENTS
+---
 
-Steps:
-1. Assess what the user likely knows from how they phrased the request
-2. Select mode: Guided (new topic) / Adaptive (shows prior knowledge) / Walkthrough (procedure)
-3. Follow the response structure in PROMPT.md
-4. End with 1 check question
+## Your job as Coordinator
 
-Start response with:
-**[Learning] [Mode: <selected_mode>]**
+**spawn `learning` agent** ด้วย prompt ต่อไปนี้:
+
+```
+## Request
+Learning request: $ARGUMENTS
+
+## Mode
+Guided (new topic) หรือ Adaptive ถ้าผู้ใช้แสดงความรู้เดิมในการถาม
+
+## Date
+<today's date>
+
+## Session Context
+No active session required
+
+## Notes
+- ประเมิน prior knowledge จากวิธีที่ผู้ใช้ถาม (technical vs general)
+- เลือก role: learning-coach (roadmap) / concept-explainer (อธิบาย) / knowledge-builder (บันทึก)
+- จบด้วย 1 check question เพื่อตรวจความเข้าใจ
+```
+
+Relay ผลที่ได้กลับให้ user ทันที
